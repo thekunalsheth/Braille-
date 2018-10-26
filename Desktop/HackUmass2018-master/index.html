@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Braille</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,600,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+
+  	<script type="text/javascript">
+  	function point_it(event){
+  		pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById("pointer_div").offsetLeft;
+  		pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById("pointer_div").offsetTop;
+  		document.getElementById("cross").style.left = (pos_x-1) ;
+  		document.getElementById("cross").style.top = (pos_y-15) ;
+  		document.getElementById("cross").style.visibility = "visible" ;
+  		document.pointform.form_x.value = pos_x;
+  		document.pointform.form_y.value = pos_y;
+  	}
+
+
+    </script>
+    </head>
+  <body>
+  <nav class="navigation">
+    <ul>
+      <li> IDEA </li>
+      <li class="logo">lOGO</li>
+      <li class="donate">DONATE</li>
+    </ul>
+  </nav>
+
+  <div id="banner">
+
+
+    <div class="content">
+      <h1>Point around this image to see what the app does </h1>
+    </div>
+  </div>
+
+  <form name="pointform" method="post">
+  <div id="pointer_div" onclick="point_it(event)" >
+    <img src = "boston.jpg" id = "cross" style="width: 100%; margin: auto"; class = "center";>
+  You pointed on x = <input type="text" name="form_x" size="4" /> - y = <input type="text" name="form_y" size="4" />
+    </form>
+
+    <div id="main" class="content">
+      <h3>What is braille? </h3>
+      <span class="byline">Created by: Kunal and Vignesh </span>
+      <p> We just wanted to create an application dedicated to help the blind. Why not have a tool that aids them with navigation? Our application allows users to
+      take pictures of their surrounding and intelligently detect and recognize the objects infront of them. Our application uses available AI tools to convert recognized objects
+      from a text name into verbal commands. </p>
+
+      <div class="pull-quote">
+        <h2>"Our technology helps people see with their ears"</h2>
+      </div>
+
+    <div class="share">
+      <a href="#">SHARE</a>
+      <a href="#">FAVORITE</a>
+      <a href="#">READ</a>
+    </div>
+
+  </body>
+  </html>

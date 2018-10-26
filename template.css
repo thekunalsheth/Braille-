@@ -1,0 +1,252 @@
+@-moz-document domain("workflowy.com")
+{
+
+
+/* WORKFLOWY BACKGROUND IMAGES */
+  body
+  {
+    transition: background-image 1s ease-in-out;
+    background-image: url("https://www.dropbox.com/s/lo7sl5tvmu4pitp/Hot%20air%20baloon.jpg?dl=1");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+/* DARK, OPAQUE PAGE CONTAINER */
+  div.page
+  {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 3px;
+  }
+
+/*[[PageWidth]]*/
+
+/* GLOBAL TEXT COLOR */
+  #documentView
+  {
+    color: #D8D8D8;
+  }
+
+/* LINK COLOR */
+  .content .contentLink
+  {
+    color: #0489B1;
+  }
+
+/*NOTES*/
+  .noted > .notes > .content
+  {
+    color: #D8D8D8;
+  }
+
+/* SEARCH RESULT COLOR */
+  .content .contentMatch
+  {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000000 !important;
+  }
+
+/* 'LAST-CHANGED': HIGHLIGHT COLOR */
+  .project.metaMatches:not(.addedToSelection)>.name>.content>.innerContentContainer, .project.metaMatches:not(.addedToSelection)>.notes>.content>.innerContentContainer
+  {
+    background-color: #585858;
+  }
+
+/* TEXT SELECTION COLOR */
+  *::selection
+  {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+  }
+
+  *::-moz-selection
+  {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+  }
+
+  *::-webkit-selection
+  {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+  }
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+
+/* TOP TOOLBAR- EVERYTHING HIDDEN EXCEPT "Saving"/ "Saved" TEXT */
+  #header
+  {
+    border-bottom: none;
+    background-image: none !important;
+    background-color: transparent !important;
+    box-shadow: 0 0 0px;
+  }
+
+  .saveButton, .showCompletedButton, #buttonBar, #helpButton
+  {
+    background-color: transparent;
+    border: transparent;
+  }
+
+/* BUTTON TEXT */
+  .saveButton.saveNow .saveButton, #helpButton, .showCompletedButton
+  {
+    opacity: 0;
+  }
+
+/* "SAVE NOW" BUTTON */
+  .saveButton.saveNow
+  {
+    opacity: 0;
+  }
+
+/* UNDO/ REDO BUTTONS */
+  .undo-icon
+  {
+    opacity: 0;
+  }
+
+  .redo-icon
+  {
+    opacity: 0;
+  }
+
+/* PRO LOGO HIDDEN */
+  .pro_member #logo
+  {
+    background-image: none;
+  }
+
+/* (INACTIVE) SEARCH BOX*/
+  #searchBox
+  {
+    color: #000;
+    background-color: #D8D8D8;
+    opacity: 0;
+    border: none;
+  }
+
+
+/* "SHOW STARRED PAGES" BUTTON */
+  #savedViewHUDButton
+  {
+    opacity: 0;
+  }
+
+/* "STAR THIS PAGE" BUTTON */
+  .pageStar
+  {
+    opacity: 0;
+  }
+
+/* REMOVE THE "GET MORE SPACE" LINK */
+  .getMoreSpaceButton
+  {
+    display: none;
+  }
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+
+/* BREADCRUMB NAVIGATION */
+  .parent>.name>.content
+  {
+    color: gray;
+    opacity: 0.7;
+  }
+
+  .parent>.name>.parentArrow:before
+  {
+    color: gray;
+  }
+
+/* BIGGER ADD BUTTON */
+  .addButton
+  {
+    font-size: 80px;
+    color: gray;
+    opacity: 0.4;
+  }
+
+/* SITE SLOGAN (MAKE LISTS. NOT WAR,) AND OTHER LINKS AT THE FOOTER OF THE PAGE TRANSPARENT */
+  .siteSlogan
+  {
+    color: transparent;
+  }
+
+  #bottomLinks a
+  {
+    color: transparent;
+  }
+
+/* BULLETS DOWNSIZED A TAD */
+  .bullet
+  {
+    height: 17px;
+    width: 17px;
+    text-indent: 3px;
+    line-height: 15px;
+  }
+
+/* FADE OUT COMPLETED ITEMS + FADE IN ON HOVER OVER */
+@  media screen
+  {
+    .project.done           .content,
+  .project.doneAppearance .content {
+    opacity: 0.4;
+  }
+
+  .project.done:hover           .content,
+  .project.done:focus           .content,
+  .project.done                 .content:focus, /* .project:focus doesn't work in Chrome as it's not editable (untested in FF) */
+  .project.doneAppearance:hover .content,
+  .project.doneAppearance:focus .content,
+  .project.doneAppearance       .content:focus
+  {
+    opacity: 1;
+  }
+}
+
+/* HIDE THE FOOTER BORDER */
+.footer
+{
+  display: none;
+}
+
+/* HOVER OVER BULLET */
+.highlighted
+{
+  color: black;
+}
+
+/* HELP DIALOGUE ANIMATION*/
+#keyboardShortcutHelper
+{
+  padding-right: 0px;
+  height: 70%;
+  width: 225px;
+  overflow-y: scroll;
+  left: auto;
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+#keyboardShortcutHelper.closed
+{
+  height: auto;
+  overflow-y: auto;
+}
+
+#keyboardShortcutHelper:hover
+{
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+
+}
